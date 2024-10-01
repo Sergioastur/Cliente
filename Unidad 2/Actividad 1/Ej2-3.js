@@ -23,7 +23,7 @@ function ejercicio() {
 
     num1 = 4;
     try {
-        document.write(num1/);
+        document.write(num1/null);
         document.write("<br>");
     } catch (err) {
         
