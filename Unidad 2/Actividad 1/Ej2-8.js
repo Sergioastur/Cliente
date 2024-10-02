@@ -11,5 +11,15 @@ function ejercicio() {
         ======================
     */
 
-    
+    let nombre = prompt("Nombre: ");
+    let apellido = prompt("Primer apellido: ");
+    let poblacion = prompt("Población: ");
+
+    document.write("=======================");
+    document.write("<br>");
+    document.write("Hola "+nombre+" "+apellido);
+    document.write("<br>");
+    document.write("Adiós habitante de "+poblacion);
+    document.write("<br>");
+    document.write("=======================");
 }
