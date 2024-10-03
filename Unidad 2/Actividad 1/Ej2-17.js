@@ -10,7 +10,7 @@ function ejercicio() {
     let num1 = 51;
     let num2 = 51;
 
-    while (num1>50 && num2>50) {
+    while (num1>50 || num2>50) {
         num1 = prompt("Numero 1 (<50):");
         num2 = prompt("Numero 2 (<50):");
     }
@@ -19,6 +19,11 @@ function ejercicio() {
         if (num1>num2) {
             num1-=2;
             num2+=5;
+        } else {
+            num2-=2;
+            num1+=5;
         }
     }
+
+    document.write("FIN PROGRAMA");
 }
