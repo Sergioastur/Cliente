@@ -1,0 +1,30 @@
+<!--
+identificar cuantos días tiene el mes
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        let fecha = new Date(Date.now);
+        let mes = fecha.getMonth();
+        
+
+        if (mes == 2) {
+            document.write("Este mes tiene 28 dias");
+        } else if (mes%2 == 0) {
+            document.write("Este mes tiene 31 dias");
+        } else {
+            document.write("Este mes tiene 30 dias");
+        }
+
+        
+    </script>
+</body>
+</html>
