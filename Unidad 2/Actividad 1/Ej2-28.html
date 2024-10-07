@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Dadas tres variables enteras (v1, v2 y v3) escribir condiciones que expresen lo siguiente:
+                Todas las variables son cero.
+                Todas las variables son positivas.
+                Todas las variables tienen el mismo signo.
+                Todos sus valores son distintos.
+                Dos de sus valores coinciden.
+                Como máximo dos de sus valores coinciden.
+                El valor de v2 está comprendido entre los de v1 y v3.
+        */
+       let v1 = 0;
+       let v2 = 0;
+       let v3 = 0;
+
+       if (v1 == 0 && v2 == 0 && v3 == 0) {
+            document.write("Todas las variables son cero.");
+       } if (v1 >= 0 && v2 >= 0 && v3 >= 0) {
+            document.write("Todas las variables son positivas");
+       } if ((v1 >= 0 && v2 >= 0 && v3 >= 0)||(v1 < 0 && v2 < 0 && v3 < 0)) {
+            document.write("Todas las variables tienen el mismo signo.");
+       } if (v1 != v2 && v1 != v3 && v2 != v3) {
+            document.write("Todos sus valores son distintos.");
+       } if (v1 == v2 || v1 == v3 || v2 == v3) {
+            document.write("Dos de sus valores coinciden.");
+       } if ((v1 == v2 || v1 == v3 || v2 == v3) && (v1 != v2 != v3)) {
+            document.write("Como máximo dos de sus valores coinciden.");
+       } if ((v1 > v2) && (v3 < v2)) {
+
+       }
+    </script>
+</body>
+</html>

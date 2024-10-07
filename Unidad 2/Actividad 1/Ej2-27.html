@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Leer 3 números (día, mes y año) y decir si corresponde a una fecha correcta. Un año es bisiesto si es
+            divisible por 4 excepto si acaba en 00 en cuyo caso es bisiesto sólo si es divisible por 400
+        */
+       let dia = prompt("Dia: ");
+       let mes = prompt("Mes: ");
+       let anno = prompt("Año: ");
+
+       if (dia > 31 || dia < 1 || mes > 12 || mes < 1 || (dia > 29 && mes == 2)) {
+            document.write("La fecha es incorrecta");
+       } else if (anno%4 == 0) {
+            document.write("El año es bisiesto");
+       } else if (String(anno).slice(-2) == "00" && anno%400 == 0) {
+            document.write("El año es bisiesto");
+       } else if (dia > 28 && mes == 2) {
+            document.write("La fecha es incorrecta");
+       } else {
+        document.write("El año NO es bisiesto");
+       }
+    </script>
+    
+</body>
+</html>

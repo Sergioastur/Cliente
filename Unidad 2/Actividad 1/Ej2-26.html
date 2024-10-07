@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Leer tres números y escribirlos en orden decreciente
+        let num1 = parseInt(prompt("Numero 1: "));
+        let num2 = parseInt(prompt("Numero 2: "));
+        let num3 = parseInt(prompt("Numero 3: "));
+
+        let numeros = [num1,num2,num3];
+        numeros.sort();
+        numeros.reverse();
+
+        for (let i = 0; i<3; i++) {
+            document.write(numeros[i]+ ", ");
+        }
+    </script>
+</body>
+</html>
