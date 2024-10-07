@@ -23,9 +23,56 @@
         */
 
         let numSecreto = prompt("Combinación secreta (4 digitos): ");
+        let digitosNum = numSecreto.split('').map(Number);
+        
 
         for (let i=0; i<8; i++) {
+            let intento = prompt("Intento "+(i+1)+": ");
+            let digitosInt = intento.split('').map(Number);
+            let heridos = 0;
+            let muertos = 0;
+            let digitosMarcados = [false, false, false, false];
+            let probados = [false, false, false, false];
             
+
+            for (let j=0; j<4; j++) {
+                if (digitosNum[j] == digitosInt[j]) {
+                    muertos++;
+                    digitosMarcados[j] = true;
+                    probados[j] = true;
+                }
+            }
+
+            /*
+            for (let x = 0; x < 4; x++) {
+                if (!probados[x]) {
+                    for (let z = 0; z < 4; z++) {
+                        if (!digitosMarcados[z] && digitosInt[x] == digitosNum[z]) {
+                            heridos++;
+                            digitosMarcados[z] = true;
+                            //break;
+                        }
+                    }
+                }
+            }
+            */
+
+            for (let j = 0; j < digitosNum.length; j++) {
+                for (let x = 0; x < digitosInt.length; x++) {
+                
+                    if (digitosNum[j] === digitosInt[x] && j !== x) {
+                        heridos++;
+                        break; 
+                    }
+                }
+            }
+            if (muertos == 4) {
+                document.write("HAS GANADO");
+                break;
+            } else {
+                window.alert("Ha habido "+muertos+" muertos y "+heridos+" heridos.");
+            }
+
         }
     </script>
 </body>

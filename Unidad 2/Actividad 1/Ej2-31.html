@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Calcular el volumen y el área de una esfera utilizando las fórmulas:
+                V = 4π r**3/3
+                A = 4π r**2
+        */
+
+        let r = prompt("Radio: ");
+
+        r = parseFloat(r);
+
+        let v = (4/3)*Math.PI*(r**3);
+        let a = 4*Math.PI*r**2
+
+        document.write("Volumen: "+v+"\n Area: "+a);
+
+
+    </script>
+</body>
+</html>

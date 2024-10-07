@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Escribir un programa que pida por teclado cuánto costó una cena, y escriba por teclado lo siguiente:
+                1. La propina más pequeña vale: propinapeq
+                2. La propina más grande vale: propinagra
+                3. Donde propinapeq es un 15% del valor de la cena
+                4. Donde propinagra es un 25% del valor de la cena
+        */
+       let cena = prompt("Costo cena: ");
+       cena = parseFloat(cena);
+       let propinapeq = cena*0.15;
+       let propinagra = cena*0.25
+        
+       document.write("La propina más pequeña vale: "+propinapeq+" \n La propina más grande vale: "+propinagra);
+    </script>   
+</body>
+</html>
