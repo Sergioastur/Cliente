@@ -17,24 +17,24 @@
                 Como máximo dos de sus valores coinciden.
                 El valor de v2 está comprendido entre los de v1 y v3.
         */
-       let v1 = 0;
+       let v1 = 1;
        let v2 = 0;
-       let v3 = 0;
+       let v3 = -5;
 
        if (v1 == 0 && v2 == 0 && v3 == 0) {
-            document.write("Todas las variables son cero.");
-       } if (v1 >= 0 && v2 >= 0 && v3 >= 0) {
-            document.write("Todas las variables son positivas");
+            document.write("Todas las variables son cero. <br>");
+       } if (v1 > 0 && v2 > 0 && v3 > 0) {
+            document.write("Todas las variables son positivas <br>");
        } if ((v1 >= 0 && v2 >= 0 && v3 >= 0)||(v1 < 0 && v2 < 0 && v3 < 0)) {
-            document.write("Todas las variables tienen el mismo signo.");
+            document.write("Todas las variables tienen el mismo signo. <br>");
        } if (v1 != v2 && v1 != v3 && v2 != v3) {
-            document.write("Todos sus valores son distintos.");
+            document.write("Todos sus valores son distintos. <br>");
        } if (v1 == v2 || v1 == v3 || v2 == v3) {
-            document.write("Dos de sus valores coinciden.");
+            document.write("Dos de sus valores coinciden. <br>");
        } if ((v1 == v2 || v1 == v3 || v2 == v3) && (v1 != v2 != v3)) {
-            document.write("Como máximo dos de sus valores coinciden.");
+            document.write("Como máximo dos de sus valores coinciden. <br>");
        } if ((v1 > v2) && (v3 < v2)) {
-
+          document.write("El valor de v2 está comprendido entre los de v1 y v3. <br>");
        }
     </script>
 </body>
