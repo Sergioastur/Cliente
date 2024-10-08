@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Realiza un ejercicio trabajando con el objeto String, que muestre por pantalla la longitud de una
+            cadena dada por el usuario, además de mostrar esa cadena en cursiva, negrita, tachada, en fuente
+            muy grande y en color rojo.
+        */
+       let txt = prompt("Cadena: ");
+       String(txt);
+
+       document.write("Longitud: "+txt.length+"<br>");
+       document.write("Cursiva: "+txt.italics()+"<br>");
+       document.write("Negrita: "+txt.bold()+"<br>");
+       document.write("Tachado: "+txt.strike()+"<br>");
+       document.write("Fuente muy grande: "+txt.fontsize(30)+"<br>");
+       document.write("Color rojo: "+txt.fontcolor("red")+"<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que escriba los números del 1 al 25 con un bucle for de 3 en 3 y escribiendo 4
+            números en cada línea.
+        */
+        let linea = 1;
+        for (let i = 1; i<=25; i = i+3) {
+            if (linea <= 4) {
+                document.write(i+" ");
+                linea++;
+            } else {
+                document.write("<br>");
+                linea = 1;
+            }
+            
+        }
+    </script>
+</body>
+</html>

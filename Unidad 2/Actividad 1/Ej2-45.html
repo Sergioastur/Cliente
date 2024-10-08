@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que solicite y visualice una serie de números distintos de cero. El programa
+            debe terminar cuando introduzcamos el valor cero que no se debe visualizar. Finalmente se desea
+            obtener la cantidad de valores leídos distintos de cero.
+        */
+
+        let num = prompt("Numero: ");
+        num = parseInt(num);
+        let nums = 0;
+        
+        while (num != 0) {
+            
+            nums++;
+            num = prompt("Numero: ");
+            num = parseInt(num);
+        }
+
+        document.write("Has escrito "+nums+" valores");
+    </script>
+</body>
+</html>

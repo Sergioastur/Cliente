@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que escriba los números del 1 al 25 de 3 en 3 con un bucle do...while y
+            escribiendo 4 números en cada línea.
+        */
+        let count = 1, linea = 1;
+        do {
+            if (linea <= 4) {
+                document.write(count+" ");
+                linea++;
+            } else {
+                document.write("<br>");
+                linea = 1;
+            }
+
+            count = count + 3;
+
+        } while(count <= 25);
+    </script>
+</body>
+</html>

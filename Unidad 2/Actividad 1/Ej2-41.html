@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que visualice todos los múltiplos de 11 menores de 300. A continuación que nos
+            de la suma de todos ellos.
+        */
+       let suma = 0;
+       for (let i = 0; i<300; i++) {
+            if (i%11 == 0) {
+                document.write(i+" ");
+                suma = suma + i;
+            }
+       }
+       document.write("<br> "+suma)
+    </script>
+</body>
+</html>
