@@ -15,8 +15,33 @@
         let num = prompt("Numero: ");
         let base = prompt ("Base: ");
         num = parseInt(num);
+        base = parseInt(base);
 
-        document.write(num.toString(base));
+        if (isNaN(num) || num<1) {
+            document.write("No es un numero correcto correcto");
+        } else if(isNaN(base) || base<2 || base>9) {
+            document.write("No es una base correcto correcto");
+        }
+        else {
+            document.write(num.toString(base));
+        }
+
+        
+
+        /*
+            Solucion clase
+            let c = num;
+            let r;
+            let res = '';
+            while (c>=base) {
+                r = c%base;
+                c = c/base;
+                c = parseInt(c);
+                res = String(r)+res;
+            }
+            res = String(c)+res;
+            document.write("El numero ", num, " en base ", base, " es ", res);
+        */
     </script>
 </body>
 </html>
