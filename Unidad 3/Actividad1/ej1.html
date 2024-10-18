@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que contenga una función llamada vernumeros() que permita visualizar los 10
+            primeros números tantas veces como queramos.
+        */
+
+        let reps = 2;
+
+        function vernumeros(repeticiones) {
+            for (let i=1; i<=repeticiones; i++) {
+                for (let j=0; j<10; j++) {
+                    document.write(j," ");
+                }
+                document.write("<br>");
+            }
+        }
+
+        vernumeros(reps);
+    </script>
+</body>
+</html>
