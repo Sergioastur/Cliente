@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que permita introducir un carácter y mediante una función compruebe si es un
+            carácter alfabético. Realizar depuración de dato, para garantizar que se introduce una letra,
+            visualizando un mensaje de alerta en caso contrario.
+        */
+
+        let caracter = prompt("Carácter alfabético: ");
+
+        function esCaracter(c) {
+            if (!isNaN(parseInt(c)) || c.charAt(1) != 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        if (esCaracter(caracter)) {
+            document.write("Es un caracter");
+        } else {
+            alert("No es un caracter");
+        }
+    </script>
+</body>
+</html>

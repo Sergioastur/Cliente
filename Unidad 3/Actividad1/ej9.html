@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Hacer un programa que mediante una función permita introducir un número y haga depuración de
+        datos de entrada.
+        */
+
+        let numero = prompt("Numero: ");
+
+        function esNum(n){
+            if (isNaN(n)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        if (esNum(numero)) {
+            alert("Es un numero");
+        } else {
+            alert("No es un numero");
+        }
+    </script>
+</body>
+</html>

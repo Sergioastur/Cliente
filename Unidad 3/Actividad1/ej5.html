@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>n</th>
+            <th>n!</th>
+        </tr>
+    <script>
+        /*
+            Generar en pantalla un Array con los 25 primeros naturales y su factorial
+        */
+
+        for (let i = 1; i<=25; i++) {
+            document.write("<tr><td>",i,"</td><td>",factorial(i),"</td></tr>");
+        }
+
+        function factorial(nf) {
+            let f=1;
+                if (nf == 0) {
+                    f = 1;
+                    
+                } else {
+                    for (i = 1; i<=nf; i++) {
+                        f = f*i;
+                    }
+                }
+            return f;
+        }
+    </script>
+    </table>
+</body>
+</html>

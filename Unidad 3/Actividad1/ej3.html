@@ -10,17 +10,21 @@
         // Hacer un programa mediante una función que reciba tres valores y devuelva el mayor de ellos.
         let num1, num2, num3;
 
-        num1 = 5;
-        num2 = 7;
-        num3 = 4;
+        num1 = prompt("Numero1: ");
+        num2 = prompt("Numero2: ");
+        num3 = prompt("Numero3: ");
 
         function numMayor(num1, num2, num3) {
             if (num1>= num2 && num1>= num3) {
                 return num1;
             } else if (num2>= num1 && num2>= num3) {
-                return 
+                return num2;
+            } else {
+                return num3;
             }
         }
+
+        document.write("El numero mayor es ",numMayor(num1,num2,num3));
     </script>
 </body>
 </html>

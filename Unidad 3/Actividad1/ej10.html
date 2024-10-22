@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que mediante una función permita introducir un carácter de operación y lo depure.
+        */
+        let cOperacion = prompt("Caracter de operación: ");
+
+        function esOperacion(c) {
+            switch (true) {
+                case c=='+':
+                case c=='-':
+                case c=='/':
+                case c=='*':
+                    return true;
+                break;
+                default:
+                    return false;
+                break;
+            }
+        }
+
+        if (esOperacion(cOperacion)) {
+            alert("Es un caracter de operacion");
+        } else {
+            alert("NO es un caracter de operacion");
+        }
+
+    </script>
+</body>
+</html>

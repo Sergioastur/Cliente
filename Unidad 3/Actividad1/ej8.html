@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que permita introducir dos caracteres, con depuración de datos de entrada, y
+            con una función permita comprobar cuál es el mayor de ellos
+        */
+       let c1 = prompt("Carácter 1:");
+       let c2 = prompt("Carácter 2:");
+
+       function mayor(c1,c2) {
+        if (c1.charAt(1) != 0 || c2.charAt(1) != 0) {
+                return false;
+            } else {
+                if (c1>c2) {
+                    return "El primer caracter es el mayor";
+                } else if (c1<c2) {
+                    return "El segundo caracter es el mayor";
+                } else {
+                    return "Son iguales";
+                }
+            }
+       }
+
+       if (!mayor(c1,c2)) {
+            alert("Valores invalidos");
+       } else {
+            document.write(mayor(c1,c2));
+       }
+    </script>
+</body>
+</html>

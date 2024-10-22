@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Hacer un programa que, mediante una función e introducidos previamente dos números y un
+            operador, realice el cálculo.
+        */
+
+        let num1 = Number(prompt("Numero 1: "));
+        let num2 = Number(prompt("Numero 2: "));
+
+        let cOperacion = prompt("Operación: ");
+
+        function calculo(n1,n2,c) {
+            let resul;
+            if (isNaN(n1) || isNaN(n2)) {
+                return false;
+            } 
+            switch (true) {
+                case c=='+':
+                    resul = n1+n2;
+                break;
+                case c=='-':
+                    resul = n1-n2;
+                break;
+                case c=='/':
+                    resul = n1/n2;
+                break;
+                case c=='*':
+                    resul = n1*n2;
+                break;
+                default:
+                    resul = false;
+                break;
+            }
+            return resul;
+        }
+
+        if (!calculo(num1,num2,cOperacion)) {
+            alert("Valores erroneos");
+        } else {
+            document.write(num1,cOperacion,num2,"= ",calculo(num1,num2,cOperacion));
+        }
+    </script>
+</body>
+</html>
