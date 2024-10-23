@@ -25,8 +25,21 @@
         }
 
         function diasDesdeFinMaya() {
-            
+            let diferencia = fechaActual()-finMaya();
+            let dias = Math.floor(diferencia/(1000*60*60*24));
+            return dias;
         }
+
+        function segundosDesdeFinMaya() {
+            let diferencia = fechaActual()-finMaya();
+            let segundos = Math.floor(diferencia/(1000));
+            return segundos;
+        }
+
+        document.write("La fecha actual: ", fechaActual(), "<br>");
+        document.write("La fecha del fin del mundo maya: ", finMaya(), "<br>");
+        document.write("Han pasado ", diasDesdeFinMaya()," dias o ",segundosDesdeFinMaya()," segundos.");
+        
     </script>
 </body>
 </html>

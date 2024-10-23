@@ -24,7 +24,22 @@
             }
         }
 
-        document.write("El numero mayor es ",numMayor(num1,num2,num3));
+        document.write("El numero mayor es ",numMayor(num1,num2,num3),"<br>");
+
+        const mayorde3 = (x,y,z) => {
+            let numeros = [x,y,z];
+            let numeroMax = numeros.reduce((max, numero)=> numero>max ? numero : max);
+            return numeroMax;
+        }
+
+        document.write("El numero mayor es ",mayorde3(num1,num2,num3));
+
+        function mayor(x,y,z) {
+            let numeros = [];
+            for (let i= 0; i<arguments.length; i++) {
+                numeros[i] = arguments[i];
+            }
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+            Crear una Clase con cuatro propiedades (Nombre de alumno y 3 notas). Ir almacenando los alumnos
+            en un Array.
+                a) Permitir añadir y eliminar alumnos y notas.
+                b) Añadirle una nueva propiedad (nota media) mediante prototype
+                c) Mostrar el Array ordenado por nombres o por nota media
+
+            * TODO: Terminar ejercicio
+            
+            
+        */
+
+        class Alumno {
+            constructor(nombre, nt1, nt2, nt3) {
+                this.nombre = nombre;
+                this.nt1 = nt1;
+                this.nt2 = nt2;
+                this.nt3 = nt3;
+            }
+
+            getNombre() {
+                return this.nombre;
+            }
+
+            getNt1() {
+                return this.nt1;
+            }
+
+            getNt1() {
+                return this.nt1;
+            }
+
+            getNt1() {
+                return this.nt1;
+            }
+
+        }
+
+        let alumnos = [];
+
+        function addAlumno() {
+            let nom = prompt("Nombre: ");
+            let n1 = prompt("Nota 1: ");
+            let n2 = prompt("Nota 2: ");
+            let n3 = prompt("Nota 3: ");
+
+            let alumno = new Alumno(nom, nt1, nt2, nt3);
+
+            alumnos.push(alumno);
+        }
+
+        function delAlumno(nombre) {
+            let indice = findIndex(alumnos.getNombre() == nombre);
+            alumnos.splice(indice);
+        }
+
+        Alumno.prototype.notaMedia = function() {
+            let media = (this.nt1+this.nt2+this.nt3)/3;
+            return media;
+
+        }
+
+        for (let i = 0; i<alumnos.length; i++) {
+
+        }
+
+
+
+    </script>
+</body>
+</html>
