@@ -27,21 +27,21 @@
                 this.nt3 = nt3;
             }
 
-            getNombre() {
+            /* get nombre() {
                 return this.nombre;
             }
 
-            getNt1() {
+            get nt1() {
                 return this.nt1;
             }
 
-            getNt1() {
-                return this.nt1;
+            get nt2() {
+                return this.nt2;
             }
 
-            getNt1() {
-                return this.nt1;
-            }
+            get nt3() {
+                return this.nt3;
+            } */
 
         }
 
@@ -58,8 +58,14 @@
             alumnos.push(alumno);
         }
 
+        p = new Alumno("prueba",5,5,5);
+        p2 = new Alumno("prueba2",6,9,5);
+        p3 = new Alumno("prueba3",0,1,5);
+
+        alumnos.push(p,p2,p3);
+
         function delAlumno(nombre) {
-            let indice = findIndex(alumnos.getNombre() == nombre);
+            let indice = findIndex(alumnos.nombre == nombre);
             alumnos.splice(indice);
         }
 
@@ -68,8 +74,9 @@
             return media;
 
         }
-
+        alumnos.sort();
         for (let i = 0; i<alumnos.length; i++) {
+            document.write(alumnos[i].nombre," ",alumnos[i].nt1," ",alumnos[i].nt2," ",alumnos[i].nt3," ",alumnos[i].notaMedia(),"<br>");
 
         }
 
