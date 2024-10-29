@@ -23,10 +23,26 @@
             empresa = new Object();
             alumno = new Object();
 
-            constructor() {
-                
+            constructor(cif, ciclo, dni, annoFin) {
+                this.empresa["CIF"] = cif;
+                this.empresa["Ciclo alumno"] = ciclo;
+                this.alumno["DNI"] = dni;
+                this.alumno["Ciclo"] = ciclo;
+                this.alumno["Año finalización ciclo"] = annoFin;
             }
         }
+
+        let alumnos = [];
+        function alta() {
+            let cif = prompt("CIF(empresa): ");
+            let cic = prompt("Ciclo: ");
+            let seg = prompt("Pregunta de seguridad: ");
+            let res = prompt("Respuesta: ");
+
+            let tempusu = new Usuario(usu,clv,seg,res);
+            usuarios.push(tempusu);
+        }
+
     </script>
 </body>
 </html>
