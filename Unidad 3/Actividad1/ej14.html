@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Crear una clase (class) que incluya dos propiedades, “nombre” y “edad”.
+            Incluir una propiedad pública y otra privada.
+            Una variable publica y otra privada.
+            Un método público y otro privado.
+            Un getter y un setter
+        */
+
+        class Persona {
+            constructor() {
+                this.nombre = "";
+                let _edad;
+                let devuelveEdad = function() {
+                    return this._edad;
+                }
+            }
+
+            queEdad() {
+                document.write("La edad de ",this.nombre," es ",devuelveEdad());
+            }
+
+            get edad() {
+                return this._edad;
+            }
+
+            set edad(n) {
+                this._edad = n;
+            }
+        }
+    </script>
+</body>
+</html>

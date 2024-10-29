@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         /**
@@ -14,7 +16,7 @@
                 b) Añadirle una nueva propiedad (nota media) mediante prototype
                 c) Mostrar el Array ordenado por nombres o por nota media
 
-            * TODO: Terminar ejercicio
+            * 
             
             
         */
@@ -49,39 +51,72 @@
 
         function addAlumno() {
             let nom = prompt("Nombre: ");
-            let n1 = prompt("Nota 1: ");
-            let n2 = prompt("Nota 2: ");
-            let n3 = prompt("Nota 3: ");
+            let n1 = Number(prompt("Nota 1: "));
+            let n2 = Number(prompt("Nota 2: "));
+            let n3 = Number(prompt("Nota 3: "));
 
-            let alumno = new Alumno(nom, nt1, nt2, nt3);
+            let alumno = new Alumno(nom, n1, n2, n3);
 
             alumnos.push(alumno);
+            
         }
 
-        p = new Alumno("prueba",5,5,5);
-        p2 = new Alumno("prueba2",6,9,5);
-        p3 = new Alumno("prueba3",0,1,5);
+        p = new Alumno("cprueba", 5, 5, 5);
+        p2 = new Alumno("aprueba2", 6, 9, 5);
+        p3 = new Alumno("bprueba3", 0, 1, 5);
 
-        alumnos.push(p,p2,p3);
+        alumnos.push(p, p2, p3);
 
-        function delAlumno(nombre) {
-            let indice = findIndex(alumnos.nombre == nombre);
-            alumnos.splice(indice);
+        function delAlumno(nombre, alumnos) {
+            let indice = alumnos.findIndex(alumnos => alumnos.nombre == nombre);
+            if (indice != -1) {
+                alumnos.splice(indice,1);
+            } else {
+                alert("El alumno no existe");
+            }
+
         }
 
-        Alumno.prototype.notaMedia = function() {
-            let media = (this.nt1+this.nt2+this.nt3)/3;
+
+
+        Alumno.prototype.notaMedia = function () {
+            let media = (this.nt1 + this.nt2 + this.nt3) / 3;
             return media;
 
         }
-        alumnos.sort();
-        for (let i = 0; i<alumnos.length; i++) {
-            document.write(alumnos[i].nombre," ",alumnos[i].nt1," ",alumnos[i].nt2," ",alumnos[i].nt3," ",alumnos[i].notaMedia(),"<br>");
 
+
+        function printArr(alumnos) {
+            alumnos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+                for (let i = 0; i < alumnos.length; i++) {
+
+                    document.write(alumnos[i].nombre, " ", alumnos[i].nt1, " ", alumnos[i].nt2, " ", alumnos[i].nt3, " ", alumnos[i].notaMedia(), "<br>");
+
+                }
         }
+
+
+        let ele = prompt("a) añadir alumno \n b) borrar alumno \n c) mostrar arrray ordenado por nombre");
+        ele = ele.toLowerCase();
+        switch (ele) {
+            case "a":
+                addAlumno();
+                printArr(alumnos);
+            break;
+            case "b":
+                let delA = prompt("Nombre del alumno a borrar: ");
+                delAlumno(delA, alumnos);
+                printArr(alumnos);
+            break;
+            case "c":
+                printArr(alumnos);
+            break;
+        }
+
 
 
 
     </script>
 </body>
+
 </html>

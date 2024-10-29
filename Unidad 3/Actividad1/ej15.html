@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Crear un método nuevo de la clase Array, que, pasándole una posición, elimine el elemento que se
+            encuentre en dicha posición.
+        */
+
+        Array.prototype.delElement = function (pos) {
+            this.splice(pos,1);
+
+        }
+
+
+        //Prueba
+
+        let arr = [1,2,3];
+        
+        arr.delElement(1);
+
+        document.write(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Realizar una clase que permita almacenar:
+                Usuario
+                Clave de acceso
+                Pregunta de seguridad
+                Respuesta
+            Permitir Altas, Bajas, Modificaciones, Consultas individuales, Listados
+        */
+
+        class Usuario {
+            constructor(usu,clave,pregunta,respuesta){
+                this.usuario = usu;
+                this.claveAcceso = clave;
+                this.preguntaSeguridad = pregunta;
+                this.respuesta = respuesta;
+            }
+        }
+
+        let usuarios = [];
+
+        function alta() {
+            let usu = prompt("Usuario: ");
+            let clv = prompt("Clave de acceso: ");
+            let seg = prompt("Pregunta de seguridad: ");
+            let res = prompt("Respuesta: ");
+
+            let tempusu = new Usuario(usu,clv,seg,res);
+            usuarios.push(tempusu);
+        }
+
+        function baja(usuario, usuarios) {
+            let indice = usuarios.findIndex(usuarios => usuarios.usuario == usuario);
+            if (indice != -1) {
+                usuarios.splice(indice,1);
+            } else {
+                alert("El usuario no existe");
+            }
+        }
+
+        function modificaciones(usuario, usuarios) {
+            let indice = usuarios.findIndex(usuarios => usuarios.usuario == usuario);
+            if (indice != -1) {
+                usuarios[indice].claveAcceso = prompt("Nueva clave de acceso: ");
+                usuarios[indice].preguntaSeguridad = prompt("Nueva pregunta de seguridad: ");
+                usuarios[indice].respuesta = prompt("Nueva respuesta: ");
+            } else {
+                alert("El usuario no existe");
+            }
+        }
+
+        function consulta(usuario, usuarios) {
+            let indice = usuarios.findIndex(usuarios => usuarios.usuario == usuario);
+            if (indice != -1) {
+                alert('Usuario: ' + usuarios[indice].usuario + '\n Clave de acceso: ' + usuarios[indice].claveAcceso +  '\n Pregunta de seguridad: ' + usuarios[indice].preguntaSeguridad + '\n  Respuesta: ' + usuarios[indice].respuesta);
+            } else {
+                alert("El usuario no existe");
+            }
+        }
+
+        function listado(usuarios) {
+            for (let i = 0; i < usuarios.length; i++) {
+
+                document.write(usuarios[i].usuario, " ", usuarios[i].claveAcceso, " ", usuarios[i].preguntaSeguridad, " ", usuarios[i].respuesta,  "<br>");
+
+            }
+        }
+        let ele = 0;
+        do {
+            ele = Number(prompt("1) ALTAS \n 2) BAJAS \n 3) MODIFICACIONES \n 4) CONSULTAS \n 5) LISTADO"));
+            switch (ele) {
+                case 1:
+                    alta();
+                break;
+                case 2:
+                    let bUsu = prompt("Usuario que quieres dar de baja: ");
+                    baja(bUsu, usuarios);
+                break;
+                case 3:
+                    let mUsu = prompt("Usuario que quieres modificar: "); 
+                    modificaciones(mUsu, usuarios);
+                break;
+                case 4:
+                    let cUsu = prompt("Usuario que quieres consultar: "); 
+                    consulta(cUsu, usuarios);
+                break;
+                case 5:
+                    listado(usuarios);
+                break;
+            }
+        } while (ele != 5);
+    </script>
+</body>
+</html>
