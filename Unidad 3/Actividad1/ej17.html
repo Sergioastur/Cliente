@@ -36,11 +36,27 @@
         function alta() {
             let cif = prompt("CIF(empresa): ");
             let cic = prompt("Ciclo: ");
-            let seg = prompt("Pregunta de seguridad: ");
-            let res = prompt("Respuesta: ");
+            let dni = prompt("DNI: ");
+            let afn = prompt("Año finalización ciclo: ");
 
-            let tempusu = new Usuario(usu,clv,seg,res);
-            usuarios.push(tempusu);
+            let tempalu = new Alumno(cif,cic,dni,afn);
+            alumnos.push(tempalu);
+        }
+
+        function baja(alumno, alumnos) {
+            let indice = alumnos.findIndex(alumnos => alumnos.alumno["DNI"] == alumno);
+            if (indice != -1) {
+                alumnos.splice(indice,1);
+            } else {
+                alert("El alumno no existe");
+            }
+        }
+
+        function consulta(alumno, alumnos) {
+            let alumnsAnno = alumnos.filter(alumnos => alumnos.alumno["ciclo"] == alumno);
+            for (let indice = 0; indice<alumnsAnno.length(); indice++) {
+                alert('alumno: ' + alumnsAnno[indice].alumno.empresa["CIF"] + '\n Clave de acceso: ' + alumnsAnno[indice].alumno.empresa["Ciclo alumno"] +  '\n Pregunta de seguridad: ' + alumnsAnno[indice].alumno.alumno["DNI"] + '\n  Respuesta: ' + alumnsAnno[indice].alumno.alumno["DNI"]);
+            }
         }
 
     </script>
