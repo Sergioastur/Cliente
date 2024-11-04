@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Crear un método de la clase String que trunque una cadena a la longitud dada, y añada un indicador
+            de cadena truncada.
+        */
+
+        String.prototype.truncar = function(long, indicador = "...") {
+            if (this.length <= long) {
+                return this.toString(); 
+            }
+            return this.slice(0, long - indicador.length) + indicador; 
+        };
+
+        let texto = "hola buenas hola buenas.";
+
+        document.write(texto.truncar(20, "..."));
+    </script>
+</body>
+</html>

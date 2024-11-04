@@ -11,6 +11,28 @@
             Crea un Array con 3 “pizzas” introducidas mediante código. Posteriormente añade otras dos nuevas
             pizzas al Array y muestra por pantalla el número total de pizzas almacenadas y cuáles son.
         */
+
+        class Pizza {
+            constructor(nombre) {
+                this.nombre = nombre;
+            }
+        }
+
+        let p1 = new Pizza("Carbonara");
+        let p2 = new Pizza("4 quesos");
+        let p3 = new Pizza("Jamón y queso");
+        let pizzas = [p1,p2,p3];
+        let p4 = new Pizza("Barbacoa");
+        let p5 = new Pizza("Hawaiana");
+        pizzas.push(p4,p5);
+
+        document.write("Hay ",pizzas.length, " pizzas y son <br>");
+        pizzas.forEach(escribir);
+
+
+        function escribir(i) {
+            document.write(i.nombre,", ");
+        }
     </script>
 </body>
 </html>
