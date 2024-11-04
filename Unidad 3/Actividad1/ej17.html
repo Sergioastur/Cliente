@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,8 +43,8 @@
             alumnos.push(tempalu);
         }
 
-        function baja(alumno, alumnos) {
-            let indice = alumnos.findIndex(alumnos => alumnos.alumno["DNI"] == alumno);
+        function baja(dni, alumnos) {
+            let indice = alumnos.findIndex(alumnos => alumnos.alumno["DNI"] == dni);
             if (indice != -1) {
                 alumnos.splice(indice,1);
             } else {
@@ -52,12 +52,54 @@
             }
         }
 
-        function consulta(alumno, alumnos) {
-            let alumnsAnno = alumnos.filter(alumnos => alumnos.alumno["ciclo"] == alumno);
-            for (let indice = 0; indice<alumnsAnno.length(); indice++) {
-                alert('alumno: ' + alumnsAnno[indice].alumno.empresa["CIF"] + '\n Clave de acceso: ' + alumnsAnno[indice].alumno.empresa["Ciclo alumno"] +  '\n Pregunta de seguridad: ' + alumnsAnno[indice].alumno.alumno["DNI"] + '\n  Respuesta: ' + alumnsAnno[indice].alumno.alumno["DNI"]);
+        function consultaCiclo(ciclo, alumnos) {
+            let alumnsAnno = alumnos.filter(alumnos => alumnos.alumno["Ciclo"] == ciclo);
+            for (let indice = 0; indice<alumnsAnno.length; indice++) {
+                alert('CIF: ' + alumnsAnno[indice].empresa["CIF"] + '\n Ciclo alumno: ' + alumnsAnno[indice].empresa["Ciclo alumno"] +  '\n DNI: ' + alumnsAnno[indice].alumno["DNI"] + '\n  Ciclo: ' + alumnsAnno[indice].alumno["Ciclo"]+'\n Año finalización ciclo:'+alumnsAnno[indice].alumno["Año finalización ciclo"]);
             }
         }
+
+        function consultaAnnoFin(annoFin, alumnos) {
+            let alumnsAnno = alumnos.filter(alumnos => alumnos.alumno["Año finalización ciclo"] == annoFin);
+            for (let indice = 0; indice<alumnsAnno.length; indice++) {
+                alert('CIF: ' + alumnsAnno[indice].empresa["CIF"] + '\n Ciclo alumno: ' + alumnsAnno[indice].empresa["Ciclo alumno"] +  '\n DNI: ' + alumnsAnno[indice].alumno["DNI"] + '\n  Ciclo: ' + alumnsAnno[indice].alumno["Ciclo"]+'\n Año finalización ciclo:'+alumnsAnno[indice].alumno["Año finalización ciclo"]);
+            }
+        }
+
+        let pruebaAlum = new Alumno("342342F","DAW","5465465Z",2024);
+        alumnos.push(pruebaAlum);
+        pruebaAlum = new Alumno("54634345A","DAW","65464654Y",2024);
+        alumnos.push(pruebaAlum);
+        pruebaAlum = new Alumno("23234Z","DAM","34534534M",2024);
+        alumnos.push(pruebaAlum);
+        pruebaAlum = new Alumno("6548598R","DAW","659889C",2025);
+        alumnos.push(pruebaAlum);
+
+
+        let ele = 0;
+        do {
+            ele = Number(prompt("1) ALTAS \n 2) BAJAS \n 3) CONSULTA POR CICLO \n 4) CONSULTA POR AÑO DE FINALIZACIÓN \n 5) SALIR"));
+            switch (ele) {
+                case 1:
+                    alta();
+                break;
+                case 2:
+                    let dni = prompt("Alumno que quieres dar de baja (DNI): ");
+                    baja(dni, alumnos);
+                break;
+                case 3:
+                    let ciclo = prompt("Busqueda de alumnos por ciclo: "); 
+                    consultaCiclo(ciclo, alumnos);
+                break;
+                case 4:
+                    let annoFin = prompt("Busqueda de alumnos por año de finalización: "); 
+                    consultaAnnoFin(annoFin, alumnos);
+                break;
+                case 5:
+                    alert("FIN PROGRAMA");
+                break;
+            }
+        } while (ele != 5);
 
     </script>
 </body>

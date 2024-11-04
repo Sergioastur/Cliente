@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Crear cuatro objetos Coche, con los atributos: Marca, Modelo, Año. Mostrar posteriormente todos
+            los coches con sus datos.
+        */
+       
+        class Coche {
+            constructor(marca, modelo, anno) {
+                this.marca = marca;
+                this.modelo = modelo;
+                this.anno = anno;
+            }
+
+            mostrarDatos () {
+                alert("Marca: "+this.marca+"\n Modelo: "+this.modelo+"\n Año: "+this.anno);
+            }
+        }
+
+        let coche1 = new Coche("Citroen","C4",2008);
+        let coche2 = new Coche("Audi","A3",2004);
+        let coche3 = new Coche("Opel","Zafira",2012);
+        let coche4 = new Coche("Chevrolet","Aveo",2007);
+
+        coche1.mostrarDatos();
+        coche2.mostrarDatos();
+        coche3.mostrarDatos();
+        coche4.mostrarDatos();
+        
+    </script>
+</body>
+</html>
