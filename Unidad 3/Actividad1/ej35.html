@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Crear un Array de arrays que permita almacenar Nombres y 3 notas de alumnos.
+            a) Permitir añadir y eliminar alumnos y notas.
+            b) Añadir un nuevo elemento (Nota Media).
+            c) Mostrar el Array ordenado por nombres o por nota media
+                var alumno1 = new Array("Pepe", 5, 6, 6.5);
+                var alumno2 = new Array("Luis”, 4, 7, 7);
+                var alumno3 = new Array("Pedro", 8, 4.5, 3);
+                var Alumnos = new Array(alumno1, alumno2, alumno3);
+        */
+        var alumno1 = new Array("Pepe", 5, 6, 6.5);
+        var alumno2 = new Array("Luis", 4, 7, 7);
+        var alumno3 = new Array("Pedro", 8, 4.5, 3);
+        var Alumnos = new Array(alumno1, alumno2, alumno3);
+
+        function alta() {
+            let nom = prompt("Nombre: ");
+            let nt1 = Number(prompt("Nota1: "));
+            let nt2 = Number(prompt("Nota2: "));
+            let nt3 = Number(prompt("Nota3: "));
+
+            let nAlum = new Array(nom, nt1,nt2,nt3);
+            Alumnos.push(nAlum);
+        }
+
+        function baja() {
+            let nomBaja = prompt("Nombre del alumno a dar de baja: ");
+            let indice = Alumnos.findIndex(Alumnos => Alumnos[0] == nomBaja);
+            if (indice != -1) {
+                Alumnos.splice(indice,1);
+            } else {
+                alert("El alumno no existe");
+            }
+        }
+
+        // Nota media
+
+        
+
+       
+    </script>
+</body>
+</html>

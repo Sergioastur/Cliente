@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Realizar una función recursiva que permita detectar, si una frase es palíndroma o no.
+        function esPalindroma(frase) {
+
+            let sinEsp = frase.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+            function verificarPalindromo(str, inicio, fin) {
+                
+                if (inicio >= fin) {
+                    return true;
+                }
+                
+                if (str[inicio] !== str[fin]) {
+                    return false;
+                }
+                
+                return verificarPalindromo(str, inicio + 1, fin - 1);
+            }
+
+            return verificarPalindromo(sinEsp, 0, sinEsp.length - 1);
+        }
+
+        document.write(esPalindroma("Anita lava la tina"));
+    </script>
+</body>
+</html>

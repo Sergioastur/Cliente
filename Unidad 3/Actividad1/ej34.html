@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Leer una cadena de texto y generar un array con la función split(). Posteriormente, mostrar la
+            siguiente información: Número de palabras, primera palabra, última palabra, las palabras colocadas
+            en orden inverso, las palabras ordenadas de la a la z y las palabras ordenadas de la z a la a. Sacar
+            toda esta información en una ventana nueva.
+        */
+
+        let cadena = prompt("Cadena: ").toLowerCase();
+        let arr = cadena.split(" ");
+
+        document.write("Número de palabras: ",arr.length,"<br>");
+        document.write("Primera palabra: ",arr[0],"<br>");
+        document.write("Última palabra: ",arr[arr.length-1],"<br>");
+        document.write("Orden inverso: ",arr.reverse(),"<br>");
+        document.write("Ordenadas de la a la z: ",arr.sort(),"<br>");
+        document.write("Ordenadas de la z la a: ",arr.sort().reverse(),"<br>");
+    </script>
+</body>
+</html>

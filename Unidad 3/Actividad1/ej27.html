@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Leer un valor introducido por el usuario y buscarlo en el Array, indicando su posición o si no existe.
+        let arr = ["a","b","c"];
+
+        let input = prompt("Valor: ");
+        let buscar = arr.findIndex(arr => arr == input);
+        if (buscar != -1) {
+            document.write("La posicion del valor es: ",buscar);
+        } else {
+            document.write("El valor no existe");
+        }
+    </script>
+</body>
+</html>
