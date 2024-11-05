@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            Realiza dos funciones, en la primera deberás pedir al usuario el resultado de una división. En la
+            segunda comprobarás si el resultado es correcto o no, devolviendo esa información a la primera
+            función.
+        */
+
+        function aleatorio(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        let a, b;
+        do {
+            a = aleatorio(21);
+            b = aleatorio(11);
+        } while (a % b != 0);
+
+        division();
+
+        function division(check) {
+            if (check == undefined) {
+                let resp = Number(prompt("Resultado de "+a+"/"+b+": "));
+                comprobar(resp);
+            } else if(check) {
+                alert("Resultado correcto");
+            } else {
+                alert("Resultado incorrecto");
+            }
+        }
+
+
+        function comprobar(resp) {
+            if (a/b == resp) {
+                division(true);
+            } else {
+                division(false);
+            }
+        }
+    </script>
+</body>
+
+</html>

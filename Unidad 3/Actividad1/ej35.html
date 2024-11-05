@@ -34,7 +34,7 @@
 
         function baja() {
             let nomBaja = prompt("Nombre del alumno a dar de baja: ");
-            let indice = Alumnos.findIndex(Alumnos => Alumnos[0] == nomBaja);
+            let indice = Alumnos.findIndex(alumno => alumno[0] == nomBaja);
             if (indice != -1) {
                 Alumnos.splice(indice,1);
             } else {
@@ -46,16 +46,52 @@
         function media() {
             for (let i = 0; i<Alumnos.length; i++) {
                 let media = (Alumnos[i][1]+Alumnos[i][2]+Alumnos[i][3])/3
-                Alumnos[i].push(media);
+                if (!Alumnos[i][4]) {
+                    Alumnos[i].push(media);
+                }
+                
             }
         }
 
         
 
-        function mostrar() {
-
+        function ordenarPorNombre() {
+             Alumnos.sort((a, b) => a[0].localeCompare(b[0]));
         }
+
+
+        function ordenarPorNotaMedia() {
+            Alumnos.sort((a, b) => b[4] - a[4]); 
+        }
+
         
+        
+        let ele = 0;
+        do {
+            ele = Number(prompt("1) ALTAS \n 2) BAJAS \n 3) ORDENAR POR NOMBRE \n 4) ORDENAR POR MEDIA \n 5) SALIR"));
+            switch (ele) {
+                case 1:
+                    alta();
+                break;
+                case 2:
+                    
+                    baja();
+                break;
+                case 3:
+                    media();
+                    ordenarPorNombre();
+                    alert(Alumnos.join("\n"));
+                break;
+                case 4:
+                    media();
+                    ordenarPorNotaMedia();
+                    alert(Alumnos.join("\n"));
+                break;
+                case 5:
+                    alert("FIN PROGRAMA");
+                break;
+            }
+        } while (ele != 5);
 
        
     </script>
