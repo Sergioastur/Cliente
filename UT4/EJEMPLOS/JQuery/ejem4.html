@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
+    <style>
+        .blue { background-color: blue; color: white; }
+        .red { color: red;}
+    </style>
+</head>
+<body>
+    <form>
+        <label id="lblEntrada" for="txtEntrada">Introduce tu texto aquí:</label><br /><br />
+        <input type="text" id="txtEntrada"/><br><br>
+        <input type="button" value="Clic"/>
+        <label id="lblError"></label>
+        
+    </form>
+    <script>
+        let currentInput = $('#txtEntrada');
+        currentInput.next().next().next().next().text("Mensaje de error");
+        $('#lblEntrada').addClass('blue').addClass('red');
+    </script>
+    
+</body>
+</html>
