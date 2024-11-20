@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Pieza</title>
+    <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
+    <script src="../js/gestionPiezas.js"></script>
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="numpieza">Número de pieza: </label>
+        <input type="number" id="numpieza" name="numpieza"><br>
+        <label for="numpedido">Número de pedido: </label>
+        <input type="number" id="numpedido" name="numpedido"><br>
+        <br>
+        <label for="largo">Largo (cm): </label>
+        <input type="number" id="largo" name="largo">
+        <label for="ancho"> Ancho (cm): </label>
+        <input type="number" id="ancho" name="ancho">
+        <label for="grosor"> Grosor (cm): </label>
+        <input type="number" id="grosor" name="grosor"><br>
+        <label for="color">Color:</label>
+
+        <select name="color" id="color">
+          <option value="rojo">Rojo</option>
+          <option value="negro">Negro</option>
+          <option value="blanco">Blanco</option>
+          <option value="azul">Azul</option>
+          <option value="gris">Gris</option>
+          <option value="natural">Natural</option>
+        </select> <br>
+        <div id="noNatural">
+            <label for="ambascaras">Ambas Caras: </label>
+            <input type="checkbox" id="ambascaras" name="ambascaras" value="ambascaras">
+            <br>
+            <p>Cortada: </p>
+            <label for="si">Si: </label>
+            <input type="radio" id="si" name="cortada" value="Si">
+            <label for="no">No: </label>
+            <input type="radio" id="no" name="cortada" value="No">
+        </div>
+        <input type="submit" value="Enviar">
+
+        
+    </form>
+    <script>altas();</script>
+</body>
+</html>
