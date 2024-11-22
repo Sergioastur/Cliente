@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Pedidos</title>
+    <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
+    <script src="../js/gestionPedidos.js"></script>
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="../index.html" method="post">
+        
+        <label for="numpedido">Número de pedido: </label>
+        <input type="number" id="numpedido" name="numpedido" required><br>
+        
+        <label for="cliente">Cliente: </label>
+        <input type="text" id="cliente" name="cliente" maxlength="50" required><br>
+        <label for="fechapedido">Fecha pedido:</label>
+        <input type="date" id="fechapedido" name="fechapedido" required><span id="dateErr" class="oculto">No puede ser mayor que hoy</span>
+        <br>
+        <label for="procesado">Procesado: </label>
+        <input type="checkbox" id="procesado" name="procesado" value="procesado">
+        <br>
+        <label for="servido">Servido: </label>
+        <input type="checkbox" id="servido" name="servido" value="servido">
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+
+        
+    </form>
+    <script>altas();</script>
+</body>
+</html>

@@ -1,6 +1,15 @@
+
+
 function altas() {
+    let color = document.getElementById("color");
+    color.addEventListener("click", ocultar, false);
     console.log($('#color').val());
-    if ($('#color').val() == "natural") {
-        $('#noNatural').addClass('oculto');
+    function ocultar() {
+        if ($('#color').val() == "natural") {
+            $('#noNatural').addClass('oculto');
+        } else {
+            $('#noNatural').removeClass('oculto');
+        }
     }
+    
 }
