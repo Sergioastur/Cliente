@@ -15,16 +15,22 @@
 <body>
     <form action="../index.html" method="post">
         <label for="numpieza">Número de pieza: </label>
-        <input type="number" id="numpieza" name="numpieza"><br>
+        <input type="number" id="numpieza" name="numpieza" min="0" required> 
+        <span id="piezaErr" class="oculto">NO SE PUEDE USAR DECIMALES</span>
+         <br>
         <label for="numpedido">Número de pedido: </label>
-        <input type="number" id="numpedido" name="numpedido"><br>
+        <!-- <input type="number" id="numpedido" name="numpedido"> -->
+        <select name="numpedido" id="numpedido" required>
+            <option value="">Seleccionar Pedido</option>
+            <script>$(document).ready(function () {selector()});</script>
+         </select><br>
         <br>
         <label for="largo">Largo (cm): </label>
-        <input type="number" id="largo" name="largo">
+        <input type="number" id="largo" name="largo" required>
         <label for="ancho"> Ancho (cm): </label>
-        <input type="number" id="ancho" name="ancho">
+        <input type="number" id="ancho" name="ancho" required>
         <label for="grosor"> Grosor (cm): </label>
-        <input type="number" id="grosor" name="grosor"><br>
+        <input type="number" id="grosor" name="grosor" required><br>
         <label for="color">Color:</label>
 
         <select name="color" id="color">
@@ -45,7 +51,7 @@
             <label for="no">No: </label>
             <input type="radio" id="no" name="cortada" value="No">
         </div>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" id="submit">
 
         
     </form>

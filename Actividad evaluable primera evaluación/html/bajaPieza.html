@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Baja Piezas</h1>
+    <form method="post" action="../index.html">
+        <label for="numpieza">Número de pieza: </label>
+        <!-- <input type="number" id="numpieza" name="numpieza" min="0" required> -->
+        <select name="numpieza" id="numpieza" required>
+            <option value="">Seleccionar Pieza</option>
+        </select>
+        <input type="submit" value="BORRAR" id="submit" style="background-color: red; color: white;">
+    </form>
+    <script>baja();</script>
+</body>
+</html>
