@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta Pieza</title>
+    <title>Modificar Piezas</title>
     <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
     <script src="../js/gestionPiezas.js"></script>
-    <style>
-        .oculto {
-            display: none;
-        }
-    </style>
 </head>
 <body>
+    <h1>Modificar Piezas</h1>
     <form action="../index.html" method="post">
         <label for="numpieza">Número de pieza: </label>
-        <input type="number" id="numpieza" name="numpieza" min="0" required> 
-        <span id="piezaErr" class="oculto">NO SE PUEDE USAR DECIMALES</span>
-         <br>
+        <!-- <input type="number" id="numpieza" name="numpieza" min="0" required> -->
+        <select name="numpieza" id="numpieza" required>
+            <option value="">Seleccionar Pieza</option>
+            <script>selectorPieza();</script>
+        </select>
+        <div id="mod" hidden>
         <label for="numpedido">Número de pedido: </label>
-        <!-- <input type="number" id="numpedido" name="numpedido"> -->
+        
         <select name="numpedido" id="numpedido" required>
             <option value="">Seleccionar Pedido</option>
             <script>$(document).ready(function () {selector()});</script>
@@ -51,10 +50,12 @@
             <label for="no">No: </label>
             <input type="radio" id="no" name="cortada" value="No">
         </div>
-        <input type="submit" value="Enviar" id="submit">
-
-        
+        <input type="submit" value="Modificar" id="submit">
+        </div>
     </form>
-    <script>altas();</script>
+
+    <script>
+        modificar();
+    </script>
 </body>
 </html>
