@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Pedido</title>
+    <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
+    <script src="../js/gestionPedidos.js"></script>
+</head>
+<body>
+    <h1>Modificar Pedido</h1>
+    <form action="../index.html" method="post">
+        
+        <label for="numpedido">Número de pedido: </label>
+        <select name="numpedido" id="numpedido" required>
+            <option value="">Seleccionar Pedido</option>
+            <script>selectorPedido();</script>
+        </select>
+        <div id="mod" hidden>
+            <label for="cliente">Cliente: </label>
+            <input type="text" id="cliente" name="cliente" maxlength="50" required><br>
+            <label for="fechapedido">Fecha pedido:</label>
+            <input type="date" id="fechapedido" name="fechapedido" required><span id="dateErr" class="oculto">No puede ser mayor que hoy</span>
+            <br>
+            <label for="procesado">Procesado: </label>
+            <input type="checkbox" id="procesado" name="procesado" value="procesado">
+            <br>
+            <label for="servido">Servido: </label>
+            <input type="checkbox" id="servido" name="servido" value="servido">
+            <br>
+            <br>
+            <input type="submit" value="Enviar" id="submit">
+        </div>
+        
+    </form>
+</body>
+</html>

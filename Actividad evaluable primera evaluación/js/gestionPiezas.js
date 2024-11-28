@@ -92,13 +92,9 @@ function baja() {
         }
     }
 
-    
-
     function eliminar() {
         localStorage.removeItem($('#numpieza').val());
     }
-    
-    
 }
 
 function ocultarColor() {
@@ -159,28 +155,26 @@ function modificar() {
     
 }
 
+function superficie(a,b) {
+    
+    let resul = a*b; 
+    return resul;
+}
+
+function volumen(a,b,c) {
+    
+    let resul = a*b*c;
+    return resul;
+}
+
 function consulta() {
     numpieza.addEventListener("change", tabla, false);
-    const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
 
     function tabla() {
         const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
         document.write("<table> <tr><th>Num. Pieza</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th></tr>");
-        document.write("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie()+"</td>"+"<td>"+volumen()+"</td></tr>");
+        document.write("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie(parseInt(pieza.largo),parseInt(pieza.ancho))+"</td>"+"<td>"+volumen(parseInt(pieza.largo),parseInt(pieza.ancho),parseInt(pieza.grosor))+"</td></tr>");
         document.write("</table>");
     }
-    
-    function superficie() {
-        const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
-        let resul = pieza.largo*pieza.ancho;
-        return resul;
-    }
-
-    function volumen() {
-        const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
-        let resul = pieza.largo*pieza.ancho*pieza.grosor;
-        return resul;
-    }
-
     
 }
