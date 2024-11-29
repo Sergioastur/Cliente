@@ -13,14 +13,14 @@
         
         <label for="numpedido">Número de pedido: </label>
         <select name="numpedido" id="numpedido" required>
-            <option value="">Seleccionar Pedido</option>
-            <script>selectorPedido();</script>
+           
+            <!-- <option value="">Seleccionar Pedido</option>  -->
         </select>
         <div id="mod" hidden>
             <label for="cliente">Cliente: </label>
             <input type="text" id="cliente" name="cliente" maxlength="50" required><br>
             <label for="fechapedido">Fecha pedido:</label>
-            <input type="date" id="fechapedido" name="fechapedido" required><span id="dateErr" class="oculto">No puede ser mayor que hoy</span>
+            <input type="date" id="fechapedido" name="fechapedido" required><span id="dateErr" hidden>No puede ser mayor que hoy</span>
             <br>
             <label for="procesado">Procesado: </label>
             <input type="checkbox" id="procesado" name="procesado" value="procesado">
@@ -29,9 +29,11 @@
             <input type="checkbox" id="servido" name="servido" value="servido">
             <br>
             <br>
-            <input type="submit" value="Enviar" id="submit">
+            <input type="submit" value="Modificar" id="submit">
         </div>
         
     </form>
+    <script>selectorPedido();</script>
+    <script>modificar();</script>
 </body>
 </html>

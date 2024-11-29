@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Pedido</title>
+    <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
+    <script src="../js/gestionPedidos.js"></script>
+</head>
+<body>
+    <h1>Consulta Pedido</h1>
+    <form action="../index.html" method="post">
+        <label for="numpedido">Número de pedido: </label>
+        <select name="numpedido" id="numpedido" required>
+            <option value="">Seleccionar Pieza</option>
+            <script>selectorPedido();</script>
+        </select>
+    </form>
+    <script>
+        
+        consulta();
+        
+    </script>
+</body>
+</html>

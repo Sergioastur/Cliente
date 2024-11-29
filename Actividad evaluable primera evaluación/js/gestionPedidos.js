@@ -1,13 +1,15 @@
 // La aplicación permitirá dar de alta, baja, modificar y consultar piezas de carpintería. 
-function alta () {
+function alta() {
     fechapedido.addEventListener("change", errorChk, false);
     function errorChk() {
         const hoy = new Date();
         hoy.setHours(0, 0, 0, 0);
         let fecha = $('#fechapedido').val();
         const fechaDate = new Date(fecha);
-        
-        console.log($('#procesado').is(":checked"))
+        fechaDate.setHours(0, 0, 0, 0);
+
+        console.log(fechaDate.getTime());
+        console.log(hoy.getTime());
         if (fechaDate.getTime() > hoy.getTime()) {
             $('#dateErr').removeClass('oculto');
             $('#submit').attr("disabled", "");
@@ -20,7 +22,7 @@ function alta () {
     submit.addEventListener("click", guardar, false);
 
     function guardar() {
-        
+
         const datos = {
             numPedido: $('#numpedido').val(),
             cliente: $('#cliente').val(),
@@ -29,7 +31,7 @@ function alta () {
             servido: $('#procesado').is(":checked")
         };
 
-        localStorage.setItem($('#numpedido').val()+'(pedido)',JSON.stringify(datos));
+        localStorage.setItem($('#numpedido').val() + '(pedido)', JSON.stringify(datos));
     }
 }
 
@@ -56,25 +58,29 @@ function baja() {
             const clave = localStorage.key(i);
             if (clave && clave.endsWith('(pieza)')) {
                 const pieza = JSON.parse(localStorage.getItem(clave));
-            
+
                 if (pieza && pieza.numPedido == $('#numpedido').val()) {
-                    localStorage.removeItem(clave); 
+                    localStorage.removeItem(clave);
                 }
             }
         }
     }
 
-    
+
 
 
 }
 
 function selectorPedido() {
+    const seleccion = $('<option></option>').attr('value', "").text("Seleccionar pedido:");
+        $('#numpedido').append(seleccion);
     for (let i = 0; i < localStorage.length; i++) {
-        const clave = localStorage.key(i); 
+         console.log(localStorage.key(i));
+        const clave = localStorage.key(i);
+        
         if (clave && clave.endsWith('(pedido)')) {
             const option = $('<option></option>').attr('value', clave).text(clave);
-            
+
             $('#numpedido').append(option);
         }
     }
@@ -92,39 +98,79 @@ function modificar() {
         } else {
             const pedido = JSON.parse(localStorage.getItem($('#numpedido').val()));
             $('#mod').removeAttr("hidden", "");
-            document.getElementById("numpedido").value = pieza.numPedido;
+            console.log(pedido.numPedido);
+            //document.getElementById("numpedido").value = pedido.numPedido;
             $('#cliente').attr("value", pedido.cliente);
-            $('#fechapedido').attr("value", pedido.fechapedido);
-            
+            $('#fechapedido').attr("value", pedido.fecha);
+
             if (pedido.procesado) {
                 $('#procesado').attr("checked", "");
             } else {
                 $('#procesado').removeAttr("checked", "");
             }
-            // TODO Terminar
-            if (pieza.cortada == "Si") {
-                $('#si').attr("checked", "");
-                $('#no').removeAttr("checked", "");
+
+            if (pedido.servido) {
+                $('#servido').attr("checked", "");
             } else {
-                $('#no').attr("checked", "");
-                $('#si').removeAttr("checked", "");
+                $('#servido').removeAttr("checked", "");
             }
 
         }
     }
 
+    fechapedido.addEventListener("change", errorChk, false);
+    function errorChk() {
+        const hoy = new Date();
+        hoy.setHours(0, 0, 0, 0);
+        let fecha = $('#fechapedido').val();
+        const fechaDate = new Date(fecha);
+        fechaDate.setHours(0, 0, 0, 0);
+
+        console.log($('#procesado').is(":checked"))
+        if (fechaDate.getTime() > hoy.getTime()) {
+            $('#dateErr').removeAttr("disabled","");
+            $('#submit').attr("disabled", "");
+        } else {
+            $('#dateErr').attr("disabled","");
+            $('#submit').removeAttr("disabled", "");
+
+        }
+    }
+
     function modif() {
-        const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
-        pieza.numPedido = $('#numpedido').val();
-        pieza.largo = $('#largo').val();
-        pieza.ancho = $('#ancho').val();
-        pieza.grosor = $('#grosor').val();
-        pieza.color = $('#color').val();
-        pieza.ambasCaras = $('#ambascaras').is(":checked");
-        pieza.cortada = $('input[name="cortada"]:checked').val();
-        localStorage.setItem($('#numpieza').val() , JSON.stringify(pieza));
+        const pedido = JSON.parse(localStorage.getItem($('#numpedido').val()));
+        pedido.numPedido = $('#numpedido').val();
+        pedido.cliente = $('#cliente').val();
+        pedido.fecha = $('#fechapedido').val();
+        pedido.procesado = $('#procesado').is(":checked");
+        pedido.servido = $('#servido').is(":checked");
+        localStorage.setItem($('#numpedido').val() , JSON.stringify(pedido));
 
     }
 
+    
+}
+
+function consulta() {
+    numpieza.addEventListener("change", tabla, false);
+
+    
+
+    function tabla() {
+        const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
+        for (let i = 0; i < localStorage.length; i++) {
+            const clave = localStorage.key(i);
+            if (clave && clave.endsWith('(pieza)')) {
+                const pieza = JSON.parse(localStorage.getItem(clave));
+    
+                if (pieza && pieza.numPedido == $('#numpedido').val()) {
+                    localStorage.removeItem(clave);
+                }
+            }
+        }
+        document.write("<table> <tr><th>Num. Pieza</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th></tr>");
+        document.write("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie(parseInt(pieza.largo),parseInt(pieza.ancho))+"</td>"+"<td>"+volumen(parseInt(pieza.largo),parseInt(pieza.ancho),parseInt(pieza.grosor))+"</td></tr>");
+        document.write("</table>");
+    }
     
 }
