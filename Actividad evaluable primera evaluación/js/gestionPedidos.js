@@ -152,25 +152,49 @@ function modificar() {
 }
 
 function consulta() {
-    numpieza.addEventListener("change", tabla, false);
+    numpedido.addEventListener("change", tabla, false);
 
     
 
     function tabla() {
-        const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
+        $("#resultado").html("");
+        let tablaHTML = "<table border='1'> <tr><th>Num. Pieza</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th></tr>";
+        /* document.writeln("<table> <tr><th>Num. Pieza</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th></tr>"); */
         for (let i = 0; i < localStorage.length; i++) {
             const clave = localStorage.key(i);
             if (clave && clave.endsWith('(pieza)')) {
                 const pieza = JSON.parse(localStorage.getItem(clave));
     
                 if (pieza && pieza.numPedido == $('#numpedido').val()) {
-                    localStorage.removeItem(clave);
+                    
+                    /* document.writeln("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie(parseInt(pieza.largo),parseInt(pieza.ancho))+"</td>"+"<td>"+volumen(parseInt(pieza.largo),parseInt(pieza.ancho),parseInt(pieza.grosor))+"</td></tr>"); */
+                    tablaHTML += `<tr>
+                        <td>${pieza.numPieza}</td>
+                        <td>${pieza.largo}</td>
+                        <td>${pieza.ancho}</td>
+                        <td>${pieza.grosor}</td>
+                        <td>${pieza.color}</td>
+                        <td>${superficie(parseInt(pieza.largo), parseInt(pieza.ancho))}</td>
+                        <td>${volumen(parseInt(pieza.largo), parseInt(pieza.ancho), parseInt(pieza.grosor))}</td>
+                    </tr>`;
                 }
             }
         }
-        document.write("<table> <tr><th>Num. Pieza</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th></tr>");
-        document.write("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie(parseInt(pieza.largo),parseInt(pieza.ancho))+"</td>"+"<td>"+volumen(parseInt(pieza.largo),parseInt(pieza.ancho),parseInt(pieza.grosor))+"</td></tr>");
-        document.write("</table>");
+        /* document.writeln("</table>"); */
+        tablaHTML += "</table>";
+        $("#resultado").html(tablaHTML);
     }
     
+}
+
+function superficie(a,b) {
+    
+    let resul = a*b; 
+    return resul;
+}
+
+function volumen(a,b,c) {
+    
+    let resul = a*b*c;
+    return resul;
 }

@@ -172,7 +172,7 @@ function consulta() {
 
     function tabla() {
         const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
-        document.write("<table> <tr><th>Num. Pieza</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th></tr>");
+        document.write("<table> <tr><th>Num. Pedido</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th></tr>");
         document.write("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie(parseInt(pieza.largo),parseInt(pieza.ancho))+"</td>"+"<td>"+volumen(parseInt(pieza.largo),parseInt(pieza.ancho),parseInt(pieza.grosor))+"</td></tr>");
         document.write("</table>");
     }
