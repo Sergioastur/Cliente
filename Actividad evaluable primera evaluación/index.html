@@ -3,23 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
     <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
-    <script src="../js/guardar.js"></script>
+    <style>
+        a:link, a:visited {
+          background-color: rgb(175, 174, 174);
+          color: white;
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        a:hover, a:active {
+          background-color: grey;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        .detalle {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>MaderAvilés</h1>
-    <a href="html/altaPieza.html">alta pieza</a>
-    <a href="html/altaPedido.html">alta Pedido</a>
-    <br>
-    <a href="html/bajaPedido.html">baja Pedido</a>
-    <a href="html/bajaPieza.html">baja pieza</a>
-    <br>
-    <a href="html/modPedido.html">Modificar Pedido</a>
-    <a href="html/modPieza.html">Modificar pieza</a>
-    <br>
-    <a href="html/consultaPedido.html">Consulta Pedido</a>
-    <a href="html/consultaPieza.html">Consulta pieza</a>
+    <main>
+        <a href="html/altaPedido.html">Alta Pedido</a><a href="html/altaPieza.html">Alta Pieza</a>
+        
+        <a href="html/bajaPedido.html">Baja Pedido</a><a href="html/bajaPieza.html">Baja Pieza</a>
+        
+        <a href="html/modPedido.html">Modificar Pedido</a><a href="html/modPieza.html">Modificar Pieza</a>
+        
+        <a href="html/consultaPedido.html">Consulta Pedido</a><a href="html/consultaPieza.html">Consulta Pieza</a>
+        
+        <a href="html/detallePedido.html" class="detalle">Detalle Pedido</a>
+    </main>
     
 </body>
 </html>

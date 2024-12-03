@@ -18,7 +18,7 @@ function altas() {
             grosor: $('#grosor').val(),
             color: $('#color').val(),
             ambasCaras: $('#ambascaras').is(":checked"),
-            cortada: $('input[name="cortada"]').val()
+            cortada: $('input[name="cortada"]:checked').val()
         };
 
         localStorage.setItem($('#numpieza').val()+'(pieza)',JSON.stringify(datos));
@@ -94,8 +94,15 @@ function baja() {
 function ocultarColor() {
     if ($('#color').val() == "natural") {
         $('#noNatural').attr("hidden", "");
+        $('#si').removeAttr("required", "");
+        $('#no').removeAttr("required", "");
+        $('input[name="cortada"]').prop( "checked", false );
+        $( "#ambascaras" ).prop( "checked", false );
+        
     } else {
         $('#noNatural').removeAttr("hidden", "");
+        $('#si').attr("required", "");
+        $('#no').attr("required", "");
     }
 }
 
@@ -163,12 +170,47 @@ function volumen(a,b,c) {
 
 function consulta() {
     numpieza.addEventListener("change", tabla, false);
-
+    
     function tabla() {
-        const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
-        document.write("<table  border='1'> <tr><th>Num. Pedido</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th><th>Ambas Caras</th><th>Cortada</th></tr>");
-        document.write("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie(parseInt(pieza.largo),parseInt(pieza.ancho))+"</td>"+"<td>"+volumen(parseInt(pieza.largo),parseInt(pieza.ancho),parseInt(pieza.grosor))+"</td><td>"+pieza.ambasCaras+"</td><td>"+pieza.cortada+"</td></tr>");
-        document.write("</table>");
+        $("#resultado").html("");
+        if ($('#numpieza').val() != "") {
+                const pieza = JSON.parse(localStorage.getItem($('#numpieza').val()));
+                /* document.write("<table  border='1'> <tr><th>Num. Pedido</th><th>Largo</th><th>Ancho</th><th>Grosor</th><th>Color</th><th>Superficie</th><th>Volumen</th><th>Ambas Caras</th><th>Cortada</th></tr>");
+                document.write("<tr><td>"+pieza.numPedido+"</td>"+"<td>"+pieza.largo+"</td>"+"<td>"+pieza.ancho+"</td>"+"<td>"+pieza.grosor+"</td>"+"<td>"+pieza.color+"</td>"+"<td>"+superficie(parseInt(pieza.largo),parseInt(pieza.ancho))+"</td>"+"<td>"+volumen(parseInt(pieza.largo),parseInt(pieza.ancho),parseInt(pieza.grosor))+"</td><td>"+pieza.ambasCaras+"</td><td>"+pieza.cortada+"</td></tr>");
+                document.write("</table>"); */
+                let tablaHTML =
+                `
+                <table border="1">
+                    <tr>
+                        <th>Num. Pedido</th>
+                        <th>Largo</th>
+                        <th>Ancho</th>
+                        <th>Grosor</th>
+                        <th>Color</th>
+                        <th>Superficie</th>
+                        <th>Volumen</th>
+                        <th>Ambas Caras</th>
+                        <th>Cortada</th>
+                    </tr>
+                    <tr>
+                        <td>${pieza.numPedido}</td>
+                        <td>${pieza.largo}</td>
+                        <td>${pieza.ancho}</td>
+                        <td>${pieza.grosor}</td>
+                        <td>${pieza.color}</td>
+                        <td>${superficie(parseInt(pieza.largo), parseInt(pieza.ancho))}</td>
+                        <td>${volumen(parseInt(pieza.largo), parseInt(pieza.ancho), parseInt(pieza.grosor))}</td>
+                        <td>${pieza.ambasCaras}</td>
+                        <td>${pieza.cortada}</td>
+                    </tr>
+                </table>
+            `;
+            $("#resultado").html(tablaHTML);
+        }
     }
     
+}
+
+function inicio() {
+    window.location.href = "../index.html";
 }

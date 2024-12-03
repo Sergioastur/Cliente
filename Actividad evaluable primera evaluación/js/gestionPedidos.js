@@ -45,6 +45,7 @@ function baja() {
             $('#submit').attr("disabled", "");
         } else {
             $('#submit').removeAttr("disabled", "");
+            alert("SE BORRARAN TODAS LAS PIEZAS ASOCIADAS");
         }
     }
 
@@ -151,7 +152,7 @@ function modificar() {
     
 }
 
-function consulta() {
+function detalle() {
     numpedido.addEventListener("change", tabla, false);
 
     
@@ -197,4 +198,42 @@ function volumen(a,b,c) {
     
     let resul = a*b*c;
     return resul;
+}
+
+
+function consulta() {
+    numpedido.addEventListener("change", tabla, false);
+    
+    function tabla() {
+        $("#resultado").html("");
+        if ($('#numpedido').val() != "") {
+                const pedido = JSON.parse(localStorage.getItem($('#numpedido').val()));
+                /* document.write("<table  border='1'> <tr><th>Num. Pedido</th><th>Cliente</th><th>Fecha</th><th>Procesado</th><th>Servido</th></tr>");
+                document.write("<tr><td>"+pedido.numPedido+"</td>"+"<td>"+pedido.cliente+"</td>"+"<td>"+pedido.fecha+"</td>"+"<td>"+pedido.procesado+"</td><td>"+pedido.servido+"</td></tr>");
+                document.write("</table>"); */
+                let tablaHTML = `
+                <table border="1">
+                    <tr>
+                        <th>Num. Pedido</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Procesado</th>
+                        <th>Servido</th>
+                    </tr>
+                    <tr>
+                        <td>${pedido.numPedido}</td>
+                        <td>${pedido.cliente}</td>
+                        <td>${pedido.fecha}</td>
+                        <td>${pedido.procesado}</td>
+                        <td>${pedido.servido}</td>
+                    </tr>
+                </table>
+            `
+            $("#resultado").html(tablaHTML);
+        }
+    }
+}
+
+function inicio() {
+    window.location.href = "../index.html";
 }
