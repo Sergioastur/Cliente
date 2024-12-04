@@ -1,0 +1,32 @@
+a:link,
+a:visited {
+    background-color: rgb(175, 174, 174);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover,
+a:active {
+    background-color: grey;
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.detalle {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+h1 {
+    text-align: center;
+}
+
+.oculto {
+    display: none;
+}

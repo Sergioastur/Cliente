@@ -22,7 +22,7 @@ function alta() {
     submit.addEventListener("click", guardar, false);
 
     function guardar() {
-
+        if ($('#numpedido').val()!="" && $('#cliente').val()!="") {
         const datos = {
             numPedido: $('#numpedido').val(),
             cliente: $('#cliente').val(),
@@ -32,6 +32,9 @@ function alta() {
         };
 
         localStorage.setItem($('#numpedido').val() + '(pedido)', JSON.stringify(datos));
+        } else {
+            alert("RELLENE LOS CAMPOS OBLIGATORIOS");
+        }
     }
 }
 

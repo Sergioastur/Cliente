@@ -9,19 +9,22 @@ function altas() {
     submit.addEventListener("click", guardar, false);
 
     function guardar() {
-        
-        const datos = {
-            numPedido: $('#numpedido').val(),
-            numPieza: $('#numpieza').val(),
-            largo: $('#largo').val(),
-            ancho: $('#ancho').val(),
-            grosor: $('#grosor').val(),
-            color: $('#color').val(),
-            ambasCaras: $('#ambascaras').is(":checked"),
-            cortada: $('input[name="cortada"]:checked').val()
-        };
+        if ($('#numpedido').val()!="" && $('#numpieza').val()!="" && $('#largo').val()!="" && $('#ancho').val()!="" && $('#grosor').val()!="") {
+            const datos = {
+                numPedido: $('#numpedido').val(),
+                numPieza: $('#numpieza').val(),
+                largo: $('#largo').val(),
+                ancho: $('#ancho').val(),
+                grosor: $('#grosor').val(),
+                color: $('#color').val(),
+                ambasCaras: $('#ambascaras').is(":checked"),
+                cortada: $('input[name="cortada"]:checked').val()
+            };
 
-        localStorage.setItem($('#numpieza').val()+'(pieza)',JSON.stringify(datos));
+            localStorage.setItem($('#numpieza').val()+'(pieza)',JSON.stringify(datos));
+        } else {
+            alert("RELLENE LOS CAMPOS OBLIGATORIOS");
+        }
     }
     
     numpieza.addEventListener("change", piezaChk, false);
