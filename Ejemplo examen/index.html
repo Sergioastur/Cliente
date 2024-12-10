@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js'></script>
+    <script src="js.js"></script>
+    <title>Cálculo IMC</title>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <label for="nombre">Nombre: </label>
+    <input type="text" id="nombre" placeholder="Nombre">
+    <label for="peso">Peso (kg): </label>
+    <input type="number" id="peso" placeholder="Peso">
+    <label for="altura">Altura (m): </label>
+    <input type="number" step="0.01" id="altura" placeholder="Altura">
+    <button onclick="addPerson()">Añadir</button>
+    <button onclick="modifyPerson()">Modificar</button>
+    <button onclick="calculateIMC()">Calcular</button>
+    <h2>Resultados:</h2>
+    <ul id="resultados"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
