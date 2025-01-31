@@ -4,6 +4,10 @@ import AcercaDe from './components/Acercade';
 import Variables2 from './components/Variables2';
 import Saludar from './components/Saludar';
 import SaludarBtn from './components/SaludarBtn';
+import EjemploEstado from './components/EjemploEstado';
+import EjemploEstado2 from './components/EjemploEstado2';
+import EjemploEstado3 from './components/EjemploEstado3';
+import Visor from './components/Visor';
 
 function App() {
   /* const nombre = 'Sergio'; */
@@ -31,6 +35,10 @@ function App() {
         <Variables2 />
         <Saludar userInfo={usuario} />
         <SaludarBtn userInfo={usuario} saludarFn={saludarFn} />
+        <EjemploEstado />
+        <EjemploEstado2 />
+        <EjemploEstado3 />
+        <Visor imagenes={["imagen1.jpg", "imagen2.jpg", "imagen3.jpg", "imagen4.jpg"]} />
       </header>
       
       <AcercaDe />
