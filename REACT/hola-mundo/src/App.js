@@ -8,18 +8,19 @@ import EjemploEstado from './components/EjemploEstado';
 import EjemploEstado2 from './components/EjemploEstado2';
 import EjemploEstado3 from './components/EjemploEstado3';
 import Visor from './components/Visor';
-
+import Galeria from "./components/Galeria";
+import { ColFotos } from "./colFotos";
 function App() {
   /* const nombre = 'Sergio'; */
   const usuario = {
     nombre: "Juan Diego",
     edad: 54,
     color: "Verde"
-    }
-    const saludarFn = () => {alert('Hola, mundo')}
+  }
+  const saludarFn = () => { alert('Hola, mundo') }
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -41,7 +42,10 @@ function App() {
         <Visor imagenes={["imagen1.jpg", "imagen2.jpg", "imagen3.jpg", "imagen4.jpg"]} />
       </header>
       
-      <AcercaDe />
+      <AcercaDe /> */}
+      <div className="App">
+        <Galeria fotos={ColFotos} />
+      </div>
     </div>
   );
 }
