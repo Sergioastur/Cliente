@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+/* import logo from './logo.svg'; */
 import './App.css';
-import AcercaDe from './components/Acercade';
+/* import AcercaDe from './components/Acercade';
 import Variables2 from './components/Variables2';
 import Saludar from './components/Saludar';
 import SaludarBtn from './components/SaludarBtn';
@@ -9,15 +9,21 @@ import EjemploEstado2 from './components/EjemploEstado2';
 import EjemploEstado3 from './components/EjemploEstado3';
 import Visor from './components/Visor';
 import Galeria from "./components/Galeria";
-import { ColFotos } from "./colFotos";
+import { ColFotos } from "./colFotos"; */
+/* import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Pagina1 from "./pages/Pagina1";
+import Producto from "./pages/Producto"; */
+import RerenderizadorSinCambioProps from "./components/RerenderizadorSinCambioProps";
+import NoRenderizadorConCambioProps from "./components/NoRenderizadorConCambioProps";
 function App() {
   /* const nombre = 'Sergio'; */
-  const usuario = {
+  /* const usuario = {
     nombre: "Juan Diego",
     edad: 54,
     color: "Verde"
   }
-  const saludarFn = () => { alert('Hola, mundo') }
+  const saludarFn = () => { alert('Hola, mundo') } */
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -43,9 +49,21 @@ function App() {
       </header>
       
       <AcercaDe /> */}
-      <div className="App">
+      {/* <div className="App">
         <Galeria fotos={ColFotos} />
-      </div>
+      </div> */}
+
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pagina1" element={<Pagina1 />} />
+        <Route path="/producto/:id" element={<Producto />} />
+      </Routes> */}
+      <main>
+        <h4>Re-renderizado sin cambiar propiedades</h4>
+        <RerenderizadorSinCambioProps />
+        <h4>No re-renderiza con cambio de propiedades</h4>
+        <NoRenderizadorConCambioProps />
+      </main>
     </div>
   );
 }
