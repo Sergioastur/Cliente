@@ -16,6 +16,10 @@ import Pagina1 from "./pages/Pagina1";
 import Producto from "./pages/Producto"; */
 import RerenderizadorSinCambioProps from "./components/RerenderizadorSinCambioProps";
 import NoRenderizadorConCambioProps from "./components/NoRenderizadorConCambioProps";
+import MiComponente from './components/MiComponente';
+/* import AlternaMensaje from './components/AlternaMensaje'; */
+import MaterialUI from './components/MaterialUI';
+
 function App() {
   /* const nombre = 'Sergio'; */
   /* const usuario = {
@@ -24,6 +28,7 @@ function App() {
     color: "Verde"
   }
   const saludarFn = () => { alert('Hola, mundo') } */
+  
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -63,6 +68,10 @@ function App() {
         <RerenderizadorSinCambioProps />
         <h4>No re-renderiza con cambio de propiedades</h4>
         <NoRenderizadorConCambioProps />
+        <MiComponente />
+        {/* <AlternaMensaje /> */}
+        <MaterialUI />
+        
       </main>
     </div>
   );
