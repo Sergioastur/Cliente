@@ -1,5 +1,6 @@
 /* import logo from './logo.svg'; */
 import './App.css';
+import FormControlado from './components/FormControlado';
 /* import AcercaDe from './components/Acercade';
 import Variables2 from './components/Variables2';
 import Saludar from './components/Saludar';
@@ -14,11 +15,18 @@ import { ColFotos } from "./colFotos"; */
 import Home from "./pages/Home";
 import Pagina1 from "./pages/Pagina1";
 import Producto from "./pages/Producto"; */
-import RerenderizadorSinCambioProps from "./components/RerenderizadorSinCambioProps";
+/* import RerenderizadorSinCambioProps from "./components/RerenderizadorSinCambioProps";
 import NoRenderizadorConCambioProps from "./components/NoRenderizadorConCambioProps";
-import MiComponente from './components/MiComponente';
+import MiComponente from './components/MiComponente'; */
 /* import AlternaMensaje from './components/AlternaMensaje'; */
-import MaterialUI from './components/MaterialUI';
+/* import MaterialUI from './components/MaterialUI';
+import { AppContext, valoresDefecto } from './AppContext';
+import Encabezado from './components/Encabezado';
+import Pie from './components/Pie';
+import Saludo from './components/Saludo'; */
+
+
+
 
 function App() {
   /* const nombre = 'Sergio'; */
@@ -63,16 +71,23 @@ function App() {
         <Route path="/pagina1" element={<Pagina1 />} />
         <Route path="/producto/:id" element={<Producto />} />
       </Routes> */}
-      <main>
+      {/* <main>
         <h4>Re-renderizado sin cambiar propiedades</h4>
         <RerenderizadorSinCambioProps />
         <h4>No re-renderiza con cambio de propiedades</h4>
         <NoRenderizadorConCambioProps />
         <MiComponente />
-        {/* <AlternaMensaje /> */}
+         <AlternaMensaje /> 
         <MaterialUI />
+        <AppContext.Provider value={valoresDefecto}>
+          <Encabezado />
+          <div>Esto simplemente es contenido.</div>
+          <Pie />
+        </AppContext.Provider>
+        <Saludo nombre="Sergio" />
         
-      </main>
+      </main> */}
+      <FormControlado />
     </div>
   );
 }
