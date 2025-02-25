@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Probando Ajax</title>
+<script>
+let XHR = new XMLHttpRequest();
+        const getData = (dataSource, divID) => {
+            event.preventDefault();
+            if (XHR) {
+                let obj = document.getElementById(divID);
+                XHR.open("GET", dataSource);
+                XHR.onreadystatechange = () => {
+                    if (XHR.readyState == 4)
+                        obj.innerHTML = XHR.responseText;
+                };
+                XHR.send(null);
+            }
+        };
+</script>
+<style>
+.imagenes { display: flex;
+justify-content: center;
+gap: 20px; }
+.imagenes img { width: 400px;
+height: auto;
+object-fit: cover; }
+</style>
+</head>
+<body>
+<h1>Mouseovers interactivos</h1>
+<div class="imagenes">
+<img src="sandwich.png" onmouseover="getData('sandwiches.txt', 'targetDiv')" />
+<img src="pizza.png" onmouseover="getData('pizzas.txt','targetDiv')" />
+<img src="sopa.png" onmouseover="getData('sopas.txt','targetDiv')" />
+</div>
+<div id="targetDiv">
+<p>Bienvenido a mi restaurante</p>
+</div>
+</body>
+</html>

@@ -1,6 +1,8 @@
 /* import logo from './logo.svg'; */
 import './App.css';
-import FormControlado from './components/FormControlado';
+/* import Filtrado from './components/Filtrado'; */
+import Formulario from './components/Formulario';
+/* import FormControlado from './components/FormControlado'; */
 /* import AcercaDe from './components/Acercade';
 import Variables2 from './components/Variables2';
 import Saludar from './components/Saludar';
@@ -87,7 +89,9 @@ function App() {
         <Saludo nombre="Sergio" />
         
       </main> */}
-      <FormControlado />
+      {/* <FormControlado /> */}
+      {/* <Filtrado /> */}
+      <Formulario />
     </div>
   );
 }

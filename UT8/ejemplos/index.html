@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Probando Ajax</title>
+    <script>
+        let XHR = new XMLHttpRequest();
+        const getData = (dataSource, divID) => {
+            event.preventDefault();
+            if (XHR) {
+                let obj = document.getElementById(divID);
+                XHR.open("GET", dataSource);
+                XHR.onreadystatechange = () => {
+                    if (XHR.readyState == 4)
+                        obj.innerHTML = XHR.responseText;
+                };
+                XHR.send(null);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Tomando datos con Ajax</h1>
+    <form>
+        <button onclick="getData('text.data','targetDiv')">
+            Mostrar mensaje
+        </button>
+    </form>
+    <div id="targetDiv">
+        <p>Los datos devueltos irán aquí.</p>
+    </div>
+</body>
+
+</html>
