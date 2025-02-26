@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* let promesa = new Promise(function (resolve, reject) {
+            // Se hacen cosas
+            let exito = true;
+            setTimeout(function () { //procesamiento asíncrono después de 5 segundos
+                if (exito) { // si todo ha salido bien
+                    resolve('Todo ha salido bien');
+                }
+                else { // Si algo ha salido mal
+                    reject(Error("Algo ha salido mal"))
+                }
+            }, 5000);
+        });
+        // El estado de la promesa cambia de pendiente a resuelta después de 5 segundos
+        promesa.then(function (val) {//val representa el valor de cumplimiento
+            console.log(val);//muestra "Todo ha salido bien" ya que la promesa se ha resuelto
+        }).catch(function (val) {//val representa el valor de rechazo
+            console.log(val); //no ocurre ya que la promesa nunca se rechaza
+        }); */
+
+        const promesa = Promise.resolve([1, 2, 3, 4]);
+        promesa.then((resultado) => {
+            console.log(resultado);
+            return resultado.map(x => x * x);
+        }).then((result2) => {
+            console.log(result2);
+            return result2.filter(x => x > 10);
+        }).then((result3) => {
+            console.log(result3);
+            return result3.toString()+"!!";
+        }).then((result4) => {
+            console.log(result4);
+            return result4;
+        }).catch((error) => {
+            console.log(error);
+        });
+    </script>
+</body>
+
+</html>
