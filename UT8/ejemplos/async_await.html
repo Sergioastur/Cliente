@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obtenerDatos = () => (new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const error = false;
+                if (error) {
+                    reject('Error al procesar los datos');
+                } else {
+                    const datos = [1, 2, 3, 4, 5];
+                    resolve(datos);
+                }
+            }, 2000);
+        }));
+
+        const obtenerDatosAsyncAwait = async () => {
+            try {
+                const datos = await obtenerDatos();
+                console.log("Datos obtenidos: ", datos);
+            } catch (error) {
+                console.log("Error: ", error);
+            }
+        };
+
+        obtenerDatosAsyncAwait();
+
+    </script>
+</body>
+
+</html>

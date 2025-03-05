@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let initObject = {
+            method: "POST",
+            headers: new Headers(),
+            mode: "cors",
+            body: "{}",
+        };
+        let request = new Request("https://jsonplaceholder.org/posts/1");
+        fetch(request)
+            .then((resultado) => resultado.json())
+            .then((resultado) => {
+                console.log(resultado); 
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    </script>
+</body>
+
+</html>
