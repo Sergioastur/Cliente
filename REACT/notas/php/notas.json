@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "texto": "Nueva nota",
+        "importancia": 3
+    },
+    {
+        "id": 2,
+        "texto": "Otra nota",
+        "importancia": 2
+    }
+]
