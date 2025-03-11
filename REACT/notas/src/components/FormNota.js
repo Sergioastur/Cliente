@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 const FormNota = ({ nota, onSave, onCancel }) => {
     const [texto, setTexto] = useState('');
     const [importancia, setImportancia] = useState(3);
@@ -26,7 +26,7 @@ const FormNota = ({ nota, onSave, onCancel }) => {
 
     return (
         <form onSubmit={envioEvt}>
-            <h2>{nota ? "Acturalizar" : "Añadir"}</h2>
+            <h2>{nota ? "Actualizar" : "Añadir"}</h2>
             <label>
                 Texto:
                 <input type="text" value={texto} onChange={(e) => setTexto(e.target.value)}

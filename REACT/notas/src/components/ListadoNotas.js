@@ -20,8 +20,7 @@ const ListadoNotas = () => {
     };
     const updateNotaEvt = (nota) => showForm(nota);
     const deleteNotaEvt = async (idNota) => {
-        let mensajeError = `Se ha producido un error al borrar la nota con identificador
-${idNota}`;
+        let mensajeError = `Se ha producido un error al borrar la nota con identificador ${idNota}`;
         try {
             const exito = await deleteNota(idNota);
             if (!exito) alert(mensajeError);
@@ -55,7 +54,7 @@ ${idNota}`;
     useEffect(() => { loadNotas(); }, []);
     return (
         <>
-            <button onClick={() => showForm()} className="boton-anadir">
+            <button onClick={() => showForm()}>
                 Añadir Nota
             </button>
             <table className="tabla">
