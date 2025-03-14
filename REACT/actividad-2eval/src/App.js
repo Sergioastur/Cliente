@@ -1,12 +1,19 @@
-import './App.css';
-import ControlApp from './components/ControlApp';
+import React, { useState, useEffect } from 'react';
+import UserTable from './components/UserTable';
+import UserForm from './components/UserForm';
+import Stats from './components/Stats';
+import { ValidationProvider } from './context/ValidationContext';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Gestión diabetes</h1>
-      <ControlApp />
-    </div>
+    <ValidationProvider>
+      <div>
+        <h1>Gestión de Insulina</h1>
+        <UserForm />
+        <UserTable />
+        <Stats />
+      </div>
+    </ValidationProvider>
   );
 }
 
