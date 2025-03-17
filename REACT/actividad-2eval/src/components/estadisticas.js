@@ -3,16 +3,15 @@ import "./estadisticas.css";
 import React, { useEffect, useState, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
 
-
 // Registrar todos los componentes de Chart.js
 Chart.register(...registerables);
 
 const Estadisticas = () => {
     const [estadisticas, setEstadisticas] = useState(null);
     const [error, setError] = useState(null);
-    const idUsuario = 6; 
-    const mes = 3; 
-    const anio = 2025;
+    const [idUsuario, setIdUsuario] = useState(6); // Estado para el ID del usuario
+    const [mes, setMes] = useState(3); // Estado para el mes
+    const [anio, setAnio] = useState(2025); // Estado para el año
     const canvasRef = useRef(null); 
     const chartRef = useRef(null); 
 
@@ -82,6 +81,33 @@ const Estadisticas = () => {
 
     return (
         <div id="estadisticas">
+            <h2>Selecciona Usuario y Fecha</h2>
+            <div>
+                <label>
+                    Usuario:
+                    <select value={idUsuario} onChange={(e) => setIdUsuario(e.target.value)}>
+                        <option value={6}>Usuario 6</option>
+                        <option value={7}>Usuario 7</option>
+                        <option value={8}>Usuario 8</option>
+                    </select>
+                </label>
+                <label>
+                    Mes:
+                    <select value={mes} onChange={(e) => setMes(e.target.value)}>
+                        {[...Array(12).keys()].map(m => (
+                            <option key={m + 1} value={m + 1}>{m + 1}</option>
+                        ))}
+                    </select>
+                </label>
+                <label>
+                    Año:
+                    <select value={anio} onChange={(e) => setAnio(e.target.value)}>
+                        <option value={2025}>2025</option>
+                        <option value={2024}>2024</option>
+                        <option value={2023}>2023</option>
+                    </select>
+                </label>
+            </div>
             {error ? (
                 <p>Error: {error}</p>
             ) : estadisticas ? (

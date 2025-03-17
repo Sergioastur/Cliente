@@ -9,6 +9,7 @@ function App() {
   return (
     <ValidacionesProvider>
     <div className="App">
+      <h1>Diabetes</h1>
       <ListadoUsuarios />
       <Estadisticas />
     </div>
