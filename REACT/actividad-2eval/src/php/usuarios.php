@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Conexión a la base de datos
 $dsn = 'mysql:host=127.0.0.1;dbname=diabetes_bd;charset=utf8mb4';
-$username = 'root'; // Cambia esto por tu nombre de usuario
-$password = ''; // Cambia esto por tu contraseña
+$username = 'root';
+$password = ''; 
 
 try {
     $pdo = new PDO($dsn, $username, $password);
@@ -45,7 +45,7 @@ function createUsuario($data, $pdo)
 
 function updateUsuarioById($id, $data, $pdo)
 {
-    $data['id_usu'] = $id; // Asegúrate de que el ID esté en los datos
+    $data['id_usu'] = $id; 
     $stmt = $pdo->prepare("UPDATE usuario SET fecha_nacimiento = :fecha_nacimiento, nombre = :nombre, apellidos = :apellidos, usuario = :usuario, contra = :contra WHERE id_usu = :id_usu");
     $stmt->execute($data);
     return $stmt->rowCount();

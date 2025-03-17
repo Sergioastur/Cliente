@@ -1,7 +1,7 @@
 /* import "./ListadoUsuarios.css";  */// Asegúrate de tener un CSS adecuado para usuarios
 import { useState, useEffect } from "react";
-import { getAllUsuarios, deleteUsuario, updateUsuario, addUsuario } from "../usuariosServer"; // Asegúrate de que estas funciones existan
-import FormUsuario from "./FormUsuario"; // Cambia a FormUsuario
+import { getAllUsuarios, deleteUsuario, updateUsuario, addUsuario } from "../usuariosServer"; 
+import FormUsuario from "./FormUsuario"; 
 
 const ListadoUsuarios = () => {
     const [usuarios, setUsuarios] = useState([]);
