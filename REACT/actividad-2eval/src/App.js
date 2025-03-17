@@ -1,28 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { getUsers } from './api';
-import UserForm from './components/UserForm';
-import UserTable from './components/UserTable';
-import { ValidationProvider } from './context';
+import React from 'react';
+import ListadoUsuarios from './components/ListadoUsuarios';
 
-const App = () => {
-  const [users, setUsers] = useState([]);
 
-  const fetchUsers = async () => {
-    const response = await getUsers();
-    setUsers(response.data);
-  };
-
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
+function App() {
   return (
-    <ValidationProvider>
-      <h1>Gestión de Usuarios</h1>
-      <UserForm onUserUpdated={fetchUsers} />
-      <UserTable users={users} onUserUpdated={fetchUsers} />
-    </ValidationProvider>
+    <div className="App">
+      <ListadoUsuarios />
+    </div>
   );
-};
+}
 
 export default App;
